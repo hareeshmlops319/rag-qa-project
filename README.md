@@ -1,3 +1,4 @@
+```mermaid
 graph LR
     A[👤 User] -->|Upload Docs| B[FastAPI]
     A -->|Ask Question| B
@@ -10,3 +11,4 @@ graph LR
     G --> H[📊 RAGAS Evaluator]
     F --> I[📈 LangSmith]
     H --> A
+```
