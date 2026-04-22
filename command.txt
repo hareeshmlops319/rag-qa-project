@@ -1,0 +1,2 @@
+uv install python 3.12
+# uv python pin 
