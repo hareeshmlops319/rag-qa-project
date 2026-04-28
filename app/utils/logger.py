@@ -2,7 +2,7 @@ import logging
 import sys
 from functools import lru_cache
 
-def setup_logger(log_level: str = "INFO") -> None:
+def setup_logging(log_level: str = "INFO") -> None:
     """ Configure the logging for the application.
 
     Args:
