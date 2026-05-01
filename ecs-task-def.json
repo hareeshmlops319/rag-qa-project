@@ -1,7 +1,7 @@
 {
     "family": "rag-qa-chatbot23-task",
     "networkMode": "awsvpc",
-    "executionRoleArn": "arn:aws:iam::665648849732:role/ecsTaskExecutionRole",
+    "executionRoleArn": "arn:aws:iam::250789929878:role/ecs-full-acess",
     "containerDefinitions": [
         {
             "name": "rag-qa-container",
