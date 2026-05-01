@@ -9,8 +9,8 @@ __pycache__/
 *.pyo
 *.pyd
 .Python
-
-# Testing
+.deepeval/
+.deepeval
 .pytest_cache/
 .coverage
 htmlcov/
