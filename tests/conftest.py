@@ -102,7 +102,9 @@ def mock_rag_chain():
         async def mock_aquery_with_sources(question):
             return {
                 "answer": "This is a test answer.",
-                "sources": [{"content": "Test content", "metadata": {"source": "test.pdf"}}],
+                "sources": [
+                    {"content": "Test content", "metadata": {"source": "test.pdf"}}
+                ],
             }
 
         chain.aquery = mock_aquery
@@ -110,7 +112,9 @@ def mock_rag_chain():
 
         chain.query_with_sources.return_value = {
             "answer": "This is a test answer.",
-            "sources": [{"content": "Test content", "metadata": {"source": "test.pdf"}}],
+            "sources": [
+                {"content": "Test content", "metadata": {"source": "test.pdf"}}
+            ],
         }
         mock.return_value = chain
         yield chain
@@ -130,13 +134,17 @@ def mock_rag_chain_with_evaluation():
         async def mock_aquery_with_sources(question):
             return {
                 "answer": "This is a test answer.",
-                "sources": [{"content": "Test content", "metadata": {"source": "test.pdf"}}],
+                "sources": [
+                    {"content": "Test content", "metadata": {"source": "test.pdf"}}
+                ],
             }
 
         async def mock_aquery_with_evaluation(question, include_sources=True):
             return {
                 "answer": "This is a test answer.",
-                "sources": [{"content": "Test content", "metadata": {"source": "test.pdf"}}],
+                "sources": [
+                    {"content": "Test content", "metadata": {"source": "test.pdf"}}
+                ],
                 "evaluation": {
                     "faithfulness": 0.95,
                     "answer_relevancy": 0.87,
@@ -151,7 +159,9 @@ def mock_rag_chain_with_evaluation():
 
         chain.query_with_sources.return_value = {
             "answer": "This is a test answer.",
-            "sources": [{"content": "Test content", "metadata": {"source": "test.pdf"}}],
+            "sources": [
+                {"content": "Test content", "metadata": {"source": "test.pdf"}}
+            ],
         }
         mock.return_value = chain
         yield chain
@@ -171,13 +181,17 @@ def mock_rag_chain_with_evaluation_error():
         async def mock_aquery_with_sources(question):
             return {
                 "answer": "This is a test answer.",
-                "sources": [{"content": "Test content", "metadata": {"source": "test.pdf"}}],
+                "sources": [
+                    {"content": "Test content", "metadata": {"source": "test.pdf"}}
+                ],
             }
 
         async def mock_aquery_with_evaluation(question, include_sources=True):
             return {
                 "answer": "This is a test answer.",
-                "sources": [{"content": "Test content", "metadata": {"source": "test.pdf"}}],
+                "sources": [
+                    {"content": "Test content", "metadata": {"source": "test.pdf"}}
+                ],
                 "evaluation": {
                     "faithfulness": None,
                     "answer_relevancy": None,
@@ -192,7 +206,9 @@ def mock_rag_chain_with_evaluation_error():
 
         chain.query_with_sources.return_value = {
             "answer": "This is a test answer.",
-            "sources": [{"content": "Test content", "metadata": {"source": "test.pdf"}}],
+            "sources": [
+                {"content": "Test content", "metadata": {"source": "test.pdf"}}
+            ],
         }
         mock.return_value = chain
         yield chain
@@ -217,7 +233,9 @@ def client_with_evaluation(mock_vector_store, mock_rag_chain_with_evaluation):
 
 
 @pytest.fixture
-def client_with_evaluation_error(mock_vector_store, mock_rag_chain_with_evaluation_error):
+def client_with_evaluation_error(
+    mock_vector_store, mock_rag_chain_with_evaluation_error
+):
     """Create test client with evaluation error mock."""
     from app.main import app
 

@@ -40,6 +40,7 @@ def format_docs(docs: list[Document]) -> str:
     """
     return "\n\n---\n\n".join(doc.page_content for doc in docs)
 
+
 class RAGChain:
     """RAG chain for question answering."""
 
@@ -210,7 +211,9 @@ class RAGChain:
             logger.error(f"Error processing async query with sources: {e}")
             raise
 
-    async def aquery_with_evaluation(self, question: str, include_sources: bool = True) -> dict:
+    async def aquery_with_evaluation(
+        self, question: str, include_sources: bool = True
+    ) -> dict:
         """Execute async RAG query with RAGAS evaluation.
 
         Args:

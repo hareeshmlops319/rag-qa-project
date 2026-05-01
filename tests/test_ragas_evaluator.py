@@ -26,7 +26,9 @@ class TestRAGASEvaluator:
     @patch("app.core.ragas_evaluator.ChatOpenAI")
     @patch("app.core.ragas_evaluator.OpenAIEmbeddings")
     @patch("app.core.ragas_evaluator.get_settings")
-    def test_evaluator_uses_separate_llm_config(self, mock_settings, mock_embeddings, mock_llm):
+    def test_evaluator_uses_separate_llm_config(
+        self, mock_settings, mock_embeddings, mock_llm
+    ):
         """Test that evaluator uses separate RAGAS LLM configuration when provided."""
         # Setup mock settings with separate RAGAS LLM
         settings = MagicMock()
@@ -57,7 +59,9 @@ class TestRAGASEvaluator:
     @patch("app.core.ragas_evaluator.ChatOpenAI")
     @patch("app.core.ragas_evaluator.OpenAIEmbeddings")
     @patch("app.core.ragas_evaluator.get_settings")
-    def test_evaluator_fallback_to_default_config(self, mock_settings, mock_embeddings, mock_llm):
+    def test_evaluator_fallback_to_default_config(
+        self, mock_settings, mock_embeddings, mock_llm
+    ):
         """Test that evaluator falls back to default LLM when RAGAS config is None."""
         # Setup mock settings without separate RAGAS LLM
         settings = MagicMock()

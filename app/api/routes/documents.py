@@ -112,7 +112,6 @@ async def get_collection_info() -> DocumentListResponse:
     summary="Delete the entire collection",
     description="Delete all documents from the vector store. Use with caution!",
 )
-
 async def delete_collection() -> dict:
     """Delete the entire document collection."""
     logger.warning("Collection deletion requested")

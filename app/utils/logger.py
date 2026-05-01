@@ -2,12 +2,13 @@ import logging
 import sys
 from functools import lru_cache
 
+
 def setup_logging(log_level: str = "INFO") -> None:
-    """ Configure the logging for the application.
+    """Configure the logging for the application.
 
     Args:
     log_level: The logging level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
-    
+
     """
     # Create a logging format
     formatter = logging.Formatter(
@@ -21,7 +22,7 @@ def setup_logging(log_level: str = "INFO") -> None:
     # Remove existing handlers to prevent duplicate logs
     for handler in root_logger.handlers[:]:
         root_logger.removeHandler(handler)
-    
+
     # Console handler
     console_handler = logging.StreamHandler(sys.stdout)
     console_handler.setFormatter(formatter)
@@ -32,8 +33,9 @@ def setup_logging(log_level: str = "INFO") -> None:
     logging.getLogger("httpcore").setLevel(logging.WARNING)
     logging.getLogger("openai").setLevel(logging.WARNING)
     logging.getLogger("qdrant_client").setLevel(logging.WARNING)
-    logging.getLogger("urllib3").setLevel(logging.WARNING)    
-    
+    logging.getLogger("urllib3").setLevel(logging.WARNING)
+
+
 @lru_cache
 def get_logger(name: str) -> logging.Logger:
     """Get a logger instance for a module.
@@ -54,5 +56,3 @@ class LoggerMixin:
     def logger(self) -> logging.Logger:
         """Get logger for this class."""
         return get_logger(self.__class__.__name__)
-
-

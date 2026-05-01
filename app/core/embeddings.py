@@ -7,6 +7,7 @@ from app.utils.logger import get_logger
 
 logger = get_logger(__name__)
 
+
 @lru_cache
 def get_embeddings() -> OpenAIEmbeddings:
     """Get cached OpenAI embeddings instance.
@@ -24,6 +25,7 @@ def get_embeddings() -> OpenAIEmbeddings:
 
     logger.info("Embeddings model initialized successfully")
     return embeddings
+
 
 class EmbeddingService:
     """Service for generating embeddings."""
