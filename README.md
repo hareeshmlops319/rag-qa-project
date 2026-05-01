@@ -21,6 +21,35 @@ RAG combines the power of **retrieval** (finding relevant information) with **ge
 - 📈 **Scalable**: Cloud-native architecture
 
 ---
+## ✨ Features
+
+### 📄 Document Management
+- ✅ Upload **PDF**, **TXT**, and **CSV** files
+- ✅ Automatic text extraction and chunking
+- ✅ Smart document splitting with overlap
+- ✅ Vector storage in Qdrant Cloud
+
+### 💬 Intelligent Q&A
+- ✅ Natural language questions
+- ✅ Context-aware answers
+- ✅ Source attribution (see which docs were used)
+- ✅ Streaming responses for real-time feedback
+- ✅ Multiple query modes (standard, search-only)
+
+### 🔍 Observability & Quality
+- ✅ **LangSmith Tracing**: Full chain visibility, token tracking, cost analysis
+- ✅ **RAGAS Evaluation**: Faithfulness & answer relevancy metrics
+- ✅ **Structured Logging**: Comprehensive error tracking
+- ✅ **Health Checks**: Readiness & liveness endpoints
+
+### 🛠️ Developer Experience
+- ✅ **Auto-generated Swagger docs** at `/docs`
+- ✅ **Type-safe** Pydantic models
+- ✅ **Comprehensive tests** with 70%+ coverage
+- ✅ **Hot reload** in development
+- ✅ **CI/CD pipeline** with GitHub Actions
+
+---
 
 ```mermaid
 graph LR
@@ -36,3 +65,20 @@ graph LR
     F --> I[📈 LangSmith]
     H --> A
 ```
+### Tech Stack
+
+| Component | Technology | Purpose |
+|-----------|------------|---------|
+| 🐍 Language | **Python 3.12** | Modern Python with type hints |
+| 🚀 API Framework | **FastAPI** | High-performance async API |
+| 🧠 RAG Framework | **LangChain** | LLM orchestration |
+| 🗄️ Vector DB | **Qdrant Cloud** | Semantic search |
+| 🔢 Embeddings | **text-embedding-3-small** | Document encoding |
+| 🤖 LLM | **GPT-4o-mini** | Answer generation |
+| 📊 Evaluation | **RAGAS** | Quality metrics |
+| 🔍 Observability | **LangSmith** | Tracing & monitoring |
+| 🐳 Container | **Docker** | Containerization |
+| ☁️ Cloud | **AWS App Runner** | Serverless hosting |
+| 🔄 CI/CD | **GitHub Actions** | Automated pipeline |
+
+---
