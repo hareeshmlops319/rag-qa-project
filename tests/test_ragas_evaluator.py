@@ -39,7 +39,7 @@ class TestRAGASEvaluator:
         settings.ragas_embedding_model = "text-embedding-3-large"
         mock_settings.return_value = settings
 
-        evaluator = RAGASEvaluator()
+        _ = RAGASEvaluator()
 
         # Verify ChatOpenAI was called with RAGAS-specific settings
         mock_llm.assert_called_once_with(
@@ -70,7 +70,7 @@ class TestRAGASEvaluator:
         settings.ragas_embedding_model = None  # Will fall back to embedding_model
         mock_settings.return_value = settings
 
-        evaluator = RAGASEvaluator()
+        _ = RAGASEvaluator()
 
         # Verify ChatOpenAI was called with default settings
         mock_llm.assert_called_once_with(
