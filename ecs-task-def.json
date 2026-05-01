@@ -46,15 +46,7 @@
                     "name": "LANGSMITH_ENDPOINT",
                     "value": "https://eu.api.smith.langchain.com"
                 }
-            ],
-            "logConfiguration": {
-                "logDriver": "awslogs",
-                "options": {
-                    "awslogs-group": "/ecs/rag-qa",
-                    "awslogs-region": "us-east-1",
-                    "awslogs-stream-prefix": "ecs"
-                }
-            }
+            ]
         }
     ],
     "requiresCompatibilities": [
